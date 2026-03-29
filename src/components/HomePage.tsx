@@ -22,17 +22,17 @@ export function HomePage() {
 
   return (
     <div
-      className={`h-screen w-full overflow-hidden transition-colors duration-300 ${darkMode ? "dark bg-[#0f0f0f]" : "bg-[#f5f5f5]"}`}
+      className={`h-screen w-full overflow-hidden transition-colors duration-300 ${darkMode ? "dark bg-dark-bg" : "bg-light-bg"}`}
     >
       <div className="max-w-6xl mx-auto h-full flex flex-col lg:flex-row gap-4 p-4 lg:p-6">
         {/* Left Column - Profile & Navigation */}
         <div className="lg:w-72 shrink-0 h-full overflow-hidden">
           <div
-            className={`rounded-xl shadow-lg border overflow-hidden h-full flex flex-col ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
+            className={`rounded-xl shadow-lg border overflow-hidden h-full flex flex-col ${darkMode ? "bg-dark-bg-primary border-dark-border" : "bg-white border-slate-200"}`}
           >
             {/* Header with Theme Toggle */}
             <div
-              className={`p-4 border-b flex items-center justify-between shrink-0 ${darkMode ? "border-[#2a2a2a]" : "border-slate-100"}`}
+              className={`p-4 border-b flex items-center justify-between shrink-0 ${darkMode ? "border-dark-border" : "border-slate-100"}`}
             >
               <span
                 className={`text-xs font-medium uppercase tracking-wider ${darkMode ? "text-gray-500" : "text-slate-500"}`}
@@ -43,7 +43,7 @@ export function HomePage() {
                 onClick={toggleTheme}
                 className={`w-9 h-9 rounded-md flex items-center justify-center transition-all ${
                   darkMode
-                    ? "bg-[#17191c] text-[#40cbf5] hover:bg-[#1e2024]"
+                    ? "bg-dark-bg-quaternary text-accent hover:bg-dark-bg-secondary"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
                 aria-label="Toggle theme"
@@ -84,11 +84,11 @@ export function HomePage() {
             <div className="p-4 text-center shrink-0">
               <div className="relative w-16 h-16 mx-auto mb-2">
                 <div
-                  className={`w-full h-full rounded-lg border-2 shadow-md flex items-center justify-center text-xl font-bold ${darkMode ? "bg-[#2a2a2a] border-[#40cbf5] text-[#40cbf5]" : "bg-slate-100 border-[#40cbf5] text-[#40cbf5]"}`}
+                  className={`w-full h-full rounded-lg border-2 shadow-md flex items-center justify-center text-xl font-bold ${darkMode ? "bg-dark-bg-tertiary border-accent text-accent" : "bg-slate-100 border-accent text-accent"}`}
                 >
                   OB
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#40cbf5] rounded-full border-2 border-white dark:border-[#1a1a1a]"></span>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-accent rounded-full border-2 border-white dark:border-dark-bg-primary"></span>
               </div>
 
               <h1
@@ -104,10 +104,10 @@ export function HomePage() {
 
               {/* Quick Stats - Compact */}
               <div
-                className={`flex justify-center gap-2 mb-2 ${darkMode ? "text-[#40cbf5]" : ""}`}
+                className={`flex justify-center gap-2 mb-2 ${darkMode ? "text-accent" : ""}`}
               >
                 <div
-                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
+                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-dark-bg-tertiary" : "bg-slate-50"}`}
                 >
                   <p
                     className={`text-sm font-bold ${darkMode ? "text-white" : "text-slate-900"}`}
@@ -121,7 +121,7 @@ export function HomePage() {
                   </p>
                 </div>
                 <div
-                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
+                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-dark-bg-tertiary" : "bg-slate-50"}`}
                 >
                   <p
                     className={`text-sm font-bold ${darkMode ? "text-white" : "text-slate-900"}`}
@@ -139,7 +139,7 @@ export function HomePage() {
 
             {/* Navigation - Scrollable */}
             <div
-              className={`border-t flex-1 overflow-y-auto min-h-0 ${darkMode ? "border-[#2a2a2a]" : "border-slate-100"}`}
+              className={`border-t flex-1 overflow-y-auto min-h-0 ${darkMode ? "border-dark-border" : "border-slate-100"}`}
             >
               <nav className="p-3 space-y-2">
                 {navItems.map((item) => (
@@ -149,10 +149,10 @@ export function HomePage() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-md text-left text-sm transition-all ${
                       activeSection === item.id
                         ? darkMode
-                          ? "bg-[#2a2a2a] text-[#40cbf5] border-l-2 border-[#40cbf5]"
-                          : "bg-[#40cbf5] text-white border-l-2 border-[#40cbf5]"
+                          ? "bg-dark-bg-tertiary text-accent border-l-2 border-accent"
+                          : "bg-accent text-white border-l-2 border-accent"
                         : darkMode
-                          ? "text-gray-300 hover:bg-[#2a2a2a] hover:text-white"
+                          ? "text-gray-300 hover:bg-dark-bg-tertiary hover:text-white"
                           : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -165,12 +165,12 @@ export function HomePage() {
 
             {/* Footer */}
             <div
-              className={`border-t p-3 shrink-0 ${darkMode ? "border-[#2a2a2a] bg-[#141414]" : "border-slate-100 bg-slate-50"}`}
+              className={`border-t p-3 shrink-0 ${darkMode ? "border-dark-border bg-dark-bg-footer" : "border-slate-100 bg-slate-50"}`}
             >
               <div
                 className={`flex items-center justify-center gap-2 text-[10px] ${darkMode ? "text-gray-500" : "text-slate-500"}`}
               >
-                <span className="w-2 h-2 rounded-sm bg-[#40cbf5] animate-pulse"></span>
+                <span className="w-2 h-2 rounded-sm bg-accent animate-pulse"></span>
                 <span>Available for work</span>
               </div>
             </div>
@@ -180,7 +180,7 @@ export function HomePage() {
         {/* Right Column - Content Area */}
         <div className="flex-1 h-full overflow-hidden">
           <div
-            className={`h-full overflow-y-auto rounded-xl shadow-lg border ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
+            className={`h-full overflow-y-auto rounded-xl shadow-lg border ${darkMode ? "bg-dark-bg-primary border-dark-border" : "bg-white border-slate-200"}`}
           >
             <ContentArea activeSection={activeSection} />
           </div>

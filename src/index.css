@@ -5,20 +5,115 @@
 @theme {
   --font-sans: "Geist", system-ui, sans-serif;
 
-  /* Cores de fundo */
-  --color-bg-primary: #212830;
-  --color-bg-secondary: #212830;
-  --color-bg-card: #212830;
+  /* ==================== CORES PRINCIPAIS ==================== */
 
-  /* Cor de destaque */
+  /* Cor de Destaque - Cyan */
   --color-accent: #40cbf5;
+  --color-accent-light: #5dd5ff;
+  --color-accent-dark: #30a8d4;
+  --color-accent-5: rgba(64, 203, 245, 0.05);
+  --color-accent-10: rgba(64, 203, 245, 0.1);
+  --color-accent-20: rgba(64, 203, 245, 0.2);
+  --color-accent-25: rgba(64, 203, 245, 0.25);
 
-  /* Cores de borda */
-  --color-border: #2a3039;
+  /* ==================== TEMA DARK ==================== */
 
-  /* Cores de texto */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9ca3af;
+  /* Backgrounds Dark */
+  --color-dark-bg: #0f0f0f;
+  --color-dark-bg-primary: #1a1a1a;
+  --color-dark-bg-secondary: #212830;
+  --color-dark-bg-tertiary: #2a2a2a;
+  --color-dark-bg-quaternary: #17191c;
+  --color-dark-bg-footer: #141414;
+
+  /* Textos Dark */
+  --color-dark-text-primary: #ffffff;
+  --color-dark-text-secondary: #9ca3af;
+  --color-dark-text-tertiary: #6b7280;
+  --color-dark-text-muted: #4b5563;
+
+  /* Bordas Dark */
+  --color-dark-border: #2a2a2a;
+  --color-dark-border-light: #334155;
+
+  /* ==================== TEMA LIGHT ==================== */
+
+  /* Backgrounds Light */
+  --color-light-bg: #f5f5f5;
+  --color-light-bg-primary: #ffffff;
+  --color-light-bg-secondary: #f1f5f9;
+  --color-light-bg-tertiary: #e2e8f0;
+  --color-light-bg-quaternary: #f8fafc;
+
+  /* Textos Light */
+  --color-light-text-primary: #0f172a;
+  --color-light-text-secondary: #334155;
+  --color-light-text-tertiary: #475569;
+  --color-light-text-muted: #64748b;
+
+  /* Bordas Light */
+  --color-light-border: #e2e8f0;
+  --color-light-border-medium: #cbd5e1;
+
+  /* ==================== CORES SLATE ==================== */
+
+  /* Slate - Escala completa para temas */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* ==================== CORES AMBER (Botões/Destaques) ==================== */
+
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-amber-900-30: rgba(120, 53, 15, 0.3);
+
+  /* ==================== CORES GRAY ==================== */
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* ==================== CORES DE STATUS ==================== */
+
+  --color-success: #22c55e;
+  --color-success-light: #4ade80;
+  --color-online: #22c55e;
+
+  /* ==================== CORES SEMÂNTICAS ==================== */
+
+  /* Focus */
+  --color-focus-ring: #f59e0b;
+  --color-selection-bg: #f59e0b;
+  --color-selection-text: #ffffff;
+
+  /* Scrollbar */
+  --color-scrollbar-thumb: #cbd5e1;
+  --color-scrollbar-thumb-hover: #94a3b8;
+  --color-scrollbar-thumb-dark: #475569;
+  --color-scrollbar-thumb-dark-hover: #64748b;
 }
 
 /* Custom animations */

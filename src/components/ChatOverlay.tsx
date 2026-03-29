@@ -109,7 +109,7 @@ export function ChatOverlay({
                   alt={personalInfo.fullName}
                   className="w-10 h-10 rounded-full object-cover border-2 border-amber-500"
                 />
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-slate-800"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-online rounded-full border-2 border-white dark:border-slate-800"></span>
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
