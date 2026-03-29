@@ -28,22 +28,22 @@ export function HomePage() {
         {/* Left Column - Profile & Navigation */}
         <div className="lg:w-72 shrink-0 h-full overflow-hidden">
           <div
-            className={`rounded-2xl shadow-lg border overflow-hidden h-full flex flex-col ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
+            className={`rounded-xl shadow-lg border overflow-hidden h-full flex flex-col ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
           >
             {/* Header with Theme Toggle */}
             <div
               className={`p-4 border-b flex items-center justify-between shrink-0 ${darkMode ? "border-[#2a2a2a]" : "border-slate-100"}`}
             >
               <span
-                className={`text-xs font-medium uppercase tracking-wider ${darkMode ? "text-gray-400" : "text-slate-500"}`}
+                className={`text-xs font-medium uppercase tracking-wider ${darkMode ? "text-gray-500" : "text-slate-500"}`}
               >
                 Portfolio
               </span>
               <button
                 onClick={toggleTheme}
-                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
+                className={`w-9 h-9 rounded-md flex items-center justify-center transition-all ${
                   darkMode
-                    ? "bg-[#2a2a2a] text-yellow-400 hover:bg-[#333]"
+                    ? "bg-[#17191c] text-[#40cbf5] hover:bg-[#1e2024]"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
                 aria-label="Toggle theme"
@@ -83,12 +83,12 @@ export function HomePage() {
             {/* Profile Section - Compact */}
             <div className="p-4 text-center shrink-0">
               <div className="relative w-16 h-16 mx-auto mb-2">
-                <img
-                  src={personalInfo.avatar}
-                  alt={personalInfo.fullName}
-                  className={`w-full h-full rounded-full border-2 shadow-md object-cover ${darkMode ? "border-[#2a2a2a]" : "border-white"}`}
-                />
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white dark:border-[#1a1a1a]"></span>
+                <div
+                  className={`w-full h-full rounded-lg border-2 shadow-md flex items-center justify-center text-xl font-bold ${darkMode ? "bg-[#2a2a2a] border-[#40cbf5] text-[#40cbf5]" : "bg-slate-100 border-[#40cbf5] text-[#40cbf5]"}`}
+                >
+                  OB
+                </div>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#40cbf5] rounded-full border-2 border-white dark:border-[#1a1a1a]"></span>
               </div>
 
               <h1
@@ -103,9 +103,11 @@ export function HomePage() {
               </p>
 
               {/* Quick Stats - Compact */}
-              <div className="flex justify-center gap-2 mb-2">
+              <div
+                className={`flex justify-center gap-2 mb-2 ${darkMode ? "text-[#40cbf5]" : ""}`}
+              >
                 <div
-                  className={`rounded-lg px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
+                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
                 >
                   <p
                     className={`text-sm font-bold ${darkMode ? "text-white" : "text-slate-900"}`}
@@ -113,13 +115,13 @@ export function HomePage() {
                     9+
                   </p>
                   <p
-                    className={`text-[10px] ${darkMode ? "text-gray-400" : "text-slate-500"}`}
+                    className={`text-[10px] ${darkMode ? "text-gray-500" : "text-slate-500"}`}
                   >
                     Years
                   </p>
                 </div>
                 <div
-                  className={`rounded-lg px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
+                  className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-[#2a2a2a]" : "bg-slate-50"}`}
                 >
                   <p
                     className={`text-sm font-bold ${darkMode ? "text-white" : "text-slate-900"}`}
@@ -127,7 +129,7 @@ export function HomePage() {
                     62+
                   </p>
                   <p
-                    className={`text-[10px] ${darkMode ? "text-gray-400" : "text-slate-500"}`}
+                    className={`text-[10px] ${darkMode ? "text-gray-500" : "text-slate-500"}`}
                   >
                     Projects
                   </p>
@@ -139,16 +141,18 @@ export function HomePage() {
             <div
               className={`border-t flex-1 overflow-y-auto min-h-0 ${darkMode ? "border-[#2a2a2a]" : "border-slate-100"}`}
             >
-              <nav className="p-3 space-y-1">
+              <nav className="p-3 space-y-2">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => handleSectionChange(item.id)}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left text-sm transition-all ${
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-md text-left text-sm transition-all ${
                       activeSection === item.id
-                        ? "bg-amber-500 text-white shadow-md"
+                        ? darkMode
+                          ? "bg-[#2a2a2a] text-[#40cbf5] border-l-2 border-[#40cbf5]"
+                          : "bg-[#40cbf5] text-white border-l-2 border-[#40cbf5]"
                         : darkMode
-                          ? "text-gray-300 hover:bg-[#2a2a2a]"
+                          ? "text-gray-300 hover:bg-[#2a2a2a] hover:text-white"
                           : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -161,12 +165,12 @@ export function HomePage() {
 
             {/* Footer */}
             <div
-              className={`border-t p-3 shrink-0 ${darkMode ? "border-[#2a2a2a] bg-[#151515]" : "border-slate-100 bg-slate-50"}`}
+              className={`border-t p-3 shrink-0 ${darkMode ? "border-[#2a2a2a] bg-[#141414]" : "border-slate-100 bg-slate-50"}`}
             >
               <div
-                className={`flex items-center justify-center gap-2 text-[10px] ${darkMode ? "text-gray-400" : "text-slate-500"}`}
+                className={`flex items-center justify-center gap-2 text-[10px] ${darkMode ? "text-gray-500" : "text-slate-500"}`}
               >
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-sm bg-[#40cbf5] animate-pulse"></span>
                 <span>Available for work</span>
               </div>
             </div>
@@ -176,7 +180,7 @@ export function HomePage() {
         {/* Right Column - Content Area */}
         <div className="flex-1 h-full overflow-hidden">
           <div
-            className={`h-full overflow-y-auto rounded-2xl shadow-lg border ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
+            className={`h-full overflow-y-auto rounded-xl shadow-lg border ${darkMode ? "bg-[#1a1a1a] border-[#2a2a2a]" : "bg-white border-slate-200"}`}
           >
             <ContentArea activeSection={activeSection} />
           </div>

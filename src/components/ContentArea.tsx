@@ -46,7 +46,7 @@ export function ContentArea({ activeSection }: ContentAreaProps) {
           <img
             src={personalInfo.avatar}
             alt={personalInfo.fullName}
-            className="w-12 h-12 rounded-full border-2 border-amber-500"
+            className="w-12 h-12 rounded-md border-2 border-[#40cbf5]"
           />
           <div>
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -78,8 +78,8 @@ function getSectionTitle(section: string): string {
 function AboutSection() {
   return (
     <div className="space-y-6 animate-fade-in">
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]">
-        <p className="text-slate-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
+      <div className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]">
+        <p className="text-slate-700 dark:text-[#40cbf5] text-lg leading-relaxed mb-6">
           {aboutContent.content[0]}
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -179,8 +179,8 @@ function StatCard({
   };
 
   return (
-    <div className="bg-slate-50 dark:bg-[#2a2a2a] rounded-xl p-4 text-center">
-      <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 mx-auto mb-2">
+    <div className="bg-slate-50 dark:bg-[#2a2a2a] rounded-md p-4 text-center">
+      <div className="w-10 h-10 rounded-md bg-[#40cbf5]/10 flex items-center justify-center text-[#40cbf5] mx-auto mb-2">
         {icons[icon]}
       </div>
       <p className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -193,18 +193,18 @@ function StatCard({
 
 function QuoteCard() {
   return (
-    <div className="bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-2xl p-6 border border-amber-100 dark:border-amber-800/30">
+    <div className="bg-linear-to-br from-[#40cbf5]/10 to-[#40cbf5]/5 dark:from-[#40cbf5]/5 dark:to-[#40cbf5]/10 rounded-md p-6 border border-[#40cbf5]/20 dark:border-[#40cbf5]/20">
       <svg
-        className="w-8 h-8 text-amber-400 mb-3"
+        className="w-8 h-8 text-[#40cbf5] mb-3"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
       </svg>
-      <p className="text-slate-700 dark:text-gray-300 italic mb-4 text-lg">
+      <p className="text-slate-700 dark:text-[#40cbf5] italic mb-4 text-lg">
         {personalInfo.quote}
       </p>
-      <p className="text-sm font-medium text-amber-600 dark:text-amber-400">
+      <p className="text-sm font-medium text-[#40cbf5]">
         {personalInfo.quoteAuthor}
       </p>
     </div>
@@ -220,12 +220,12 @@ function SkillsSection() {
       {skillCategories.map((category) => (
         <div
           key={category.name}
-          className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]"
+          className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]"
         >
           <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
             {category.name === "Frontend" ? (
               <svg
-                className="w-5 h-5 text-amber-500"
+                className="w-5 h-5 text-[#40cbf5]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -239,7 +239,7 @@ function SkillsSection() {
               </svg>
             ) : (
               <svg
-                className="w-5 h-5 text-amber-500"
+                className="w-5 h-5 text-[#40cbf5]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -260,14 +260,14 @@ function SkillsSection() {
                 key={skill.name}
                 className="flex items-center justify-between"
               >
-                <span className="text-slate-700 dark:text-gray-300 font-medium">
+                <span className="text-slate-700 dark:text-[#40cbf5] font-medium">
                   {skill.name}
                 </span>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <div
                       key={i}
-                      className={`w-3 h-3 rounded-full ${i < skill.rating ? "bg-amber-500" : "bg-slate-200 dark:bg-[#3a3a3a]"}`}
+                      className={`w-3 h-3 rounded-full ${i < skill.rating ? "bg-[#40cbf5]" : "bg-slate-200 dark:bg-[#1a1a1a]"}`}
                     />
                   ))}
                 </div>
@@ -290,7 +290,7 @@ function ProjectsSection() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-[#2a2a2a] group hover:shadow-lg transition-shadow"
+            className="bg-white dark:bg-[#1a1a1a] rounded-md overflow-hidden shadow-sm border border-slate-100 dark:border-[#2a2a2a] group"
           >
             <div className="relative h-48 overflow-hidden">
               <img
@@ -298,7 +298,7 @@ function ProjectsSection() {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#212830]/80 to-transparent" />
               <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white">
                 {project.title}
               </h3>
@@ -312,7 +312,7 @@ function ProjectsSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 font-medium hover:underline"
+                  className="inline-flex items-center gap-2 text-[#40cbf5] font-medium hover:underline"
                 >
                   View Project
                   <svg
@@ -348,9 +348,9 @@ function ClientsSection() {
         {clients.map((client, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 flex items-center justify-center h-24 shadow-sm border border-slate-100 dark:border-[#2a2a2a] hover:shadow-md transition-shadow"
+            className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 flex items-center justify-center h-24 shadow-sm border border-slate-100 dark:border-[#2a2a2a]"
           >
-            <span className="text-lg font-medium text-slate-600 dark:text-gray-300">
+            <span className="text-lg font-medium text-slate-600 dark:text-[#40cbf5]">
               {client.name}
             </span>
           </div>
@@ -415,8 +415,8 @@ function ContactSection() {
         {contactContent.content[0]}
       </p>
       <div className="grid gap-4">
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4">
-          <div className="w-14 h-14 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+        <div className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4">
+          <div className="w-14 h-14 rounded-md bg-[#40cbf5]/10 flex items-center justify-center text-[#40cbf5]">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -438,8 +438,8 @@ function ContactSection() {
             </p>
           </div>
         </div>
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4">
-          <div className="w-14 h-14 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+        <div className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4">
+          <div className="w-14 h-14 rounded-md bg-[#40cbf5]/10 flex items-center justify-center text-[#40cbf5]">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.607.951.757-3.453a1 1 0 00-.166-.943A8.44 8.44 0 004.94 7.93c0-4.655 3.795-8.44 8.44-8.44 2.237 0 4.34.875 5.922 2.462a8.32 8.32 0 012.461 5.92c0 4.656-3.793 8.44-8.44 8.44h-.004z" />
             </svg>
@@ -452,7 +452,7 @@ function ContactSection() {
           </div>
         </div>
       </div>
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]">
+      <div className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a]">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
           Social Links
         </h3>
@@ -463,7 +463,7 @@ function ContactSection() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-[#2a2a2a] flex items-center justify-center text-slate-600 dark:text-gray-400 hover:bg-amber-500 hover:text-white transition-all"
+              className="w-12 h-12 rounded-md bg-slate-100 dark:bg-[#2a2a2a] flex items-center justify-center text-slate-600 dark:text-gray-400 hover:bg-[#40cbf5] hover:text-white transition-all"
               title={social.name}
             >
               {socialIcons[social.icon]}
@@ -590,9 +590,9 @@ function HobbiesSection() {
         {hobbies.map((hobby) => (
           <div
             key={hobby.name}
-            className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4"
+            className="bg-white dark:bg-[#1a1a1a] rounded-md p-6 shadow-sm border border-slate-100 dark:border-[#2a2a2a] flex items-center gap-4"
           >
-            <div className="w-14 h-14 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+            <div className="w-14 h-14 rounded-md bg-[#40cbf5]/10 flex items-center justify-center text-[#40cbf5]">
               {hobbyIcons[hobby.icon]}
             </div>
             <div>
